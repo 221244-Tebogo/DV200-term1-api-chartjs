@@ -1,5 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  font-family: 'Raleway', sans-serif; /* Set body font to Raleway */
+  font-family: 'Raleway', sans-serif; 
+  color: white !important;
+
 }
 
 .App {
@@ -25,7 +31,6 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white; /* Default font color */
 }
 
 /* Navbar styling */
@@ -38,11 +43,24 @@ body {
   color: #61dafb;
 }
 
-/* Normal font color */
-body {
-  color: #697181;
+
+.container {
+  width: 100%;
+  padding: 1.5rem 1rem 1rem;
+  margin-right: auto;
+  margin-left: auto;
+
 }
 
+.row {
+
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(26,29,33,1) 100%);
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -51,3 +69,40 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.content {
+  display: flex;
+}
+
+/*Timeline Code*/
+.image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.row img {
+  width: 20%; /* Adjust the width as needed */
+  margin: 5px; /* Adjust margin as needed */
+}
+
+/* Define styles for the sidebar */
+.sidebar {
+  width: 250px; /* Adjust width as needed */
+  height: 100vh; /* Set sidebar height to full height of viewport */
+  position: fixed; /* Fix the sidebar position */
+  left: 0; /* Position the sidebar on the left side */
+}
+
+/* Define styles for the main container */
+.main-container {
+  margin-left: 250px; 
+  padding: 20px; 
+  height: 100%; 
+  body: white
+}
+
+/* Add more specific styling for the header and main content if needed */
