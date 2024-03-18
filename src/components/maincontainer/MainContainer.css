@@ -1,6 +1,6 @@
 .maincontainer {
     width: 100%;
     height: cal(100% - 45px);
-    background: #444;
+    background: #f04a4a;
     display: flex;
 }

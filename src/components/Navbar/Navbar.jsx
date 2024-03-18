@@ -11,32 +11,32 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <div className="navbar-container">
-      <Sidebar style={{ backgroundColor: "#1E242A", height: "100vh" }}>
+      <Sidebar className="sidebar">
         <div className="logo-container">
-          <img src={logo} alt="Logo" className="logo" />
+          <img src={logo} alt="Logo" className="logo-container" />
         </div>
-        <Menu>
-          <MenuItem>
+        <Menu className="menu">
+          <MenuItem className="nav-link">
             <Link to="/">
               <HomeRoundedIcon /> Home
             </Link>
           </MenuItem>
-          <MenuItem>
+          <MenuItem className="nav-link">
             <Link to="/compare">
               <InsertChartIcon /> Comparison
             </Link>
           </MenuItem>
-          <MenuItem>
+          <MenuItem className="nav-link">
             <Link to="/timeline">
               <TimelineRoundedIcon /> Timeline
             </Link>
           </MenuItem>
-          <MenuItem>
+          <MenuItem className="nav-link">
             <Link to="/manu">
               <TimelineRoundedIcon /> Manu
             </Link>
           </MenuItem>
-          <MenuItem>
+          <MenuItem className="nav-link">
             <Link to="/dogs">
               {" "}
               {/* Update path to /dogs */}

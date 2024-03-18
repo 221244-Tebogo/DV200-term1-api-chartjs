@@ -1,6 +1,7 @@
-//API Example
+// Manu.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import SliderGallery from "../components/SliderGallery/SliderGallery";
 
 const RaceDetails = ({ race }) => {
   return (
@@ -47,45 +48,11 @@ const Manu = () => {
   return (
     <div>
       <h1>API Call Exercise</h1>
-      {race && <RaceDetails race={race} />}{" "}
+      <SliderGallery />
       {/* Render RaceDetails component if race exists */}
+      {race && <RaceDetails race={race} />}
     </div>
   );
 };
 
 export default Manu;
-
-// EVENT HANDLER
-// import React, { useState } from "react";
-
-// const Manu = () => {
-//   const [btnColor, setBtnColor] = useState("blue");
-//   const [h1Color, setH1Color] = useState("pink");
-
-//   //camelCase your event
-//   const handleBtnClick = () => {
-//     alert("Manchester United");
-//   };
-
-//   return (
-//     <div>
-//       <button
-//         style={{ backgroundColor: btnColor }}
-//         onMouseEnter={() => setBtnColor("red")}
-//         onMouseLeave={() => setBtnColor("blue")}
-//         onClick={handleBtnClick}
-//       >
-//         Click me
-//       </button>
-//       <h1
-//         style={{ color: h1Color }}
-//         onMouseEnter={() => setH1Color("blue")}
-//         onMouseLeave={() => setH1Color("yellow")}
-//       >
-//         Class Exercise
-//       </h1>
-//     </div>
-//   );
-// };
-
-// export default Manu;

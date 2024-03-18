@@ -1,38 +1,171 @@
+/* index.css */
 
-/* How to add fonts from Google-> search for font, import URL */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap')
+/* Use @tailwind base instead of @layer base */
+@tailwind base;
+
+/* Global styles for HTML, body, and root */
 html,
 body,
-#root,
-.app,
-.content {
+#root {
   height: 100%;
   width: 100%;
   font-family: 'Raleway', sans-serif;
+  color: white; 
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(26,29,33,1) 100%);
+
 }
 
+/* App styles */
 .app {
   display: flex;
   position: relative;
+  
 }
 
-/* Scrollbar */
+/* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 10px;
+  
 }
 
-/*Trackbar */
 ::-webkit-scrollbar-track {
-  background: #e0e0e0;
+  background: #dc16b4;
 }
 
-/*Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #b2c314;
 }
 
-/*Handle on Hover */
 ::-webkit-scrollbar-track:hover {
-  background: #555;
+  background: #e51515;
+}
+
+/* Button styles */
+button {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  background-color: #b9e425;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff1e83;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #B9E425;
+}
+
+/* Navbar styles */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 100;
+  background-color: #1E242A; 
+  
+}
+
+/* Icon styles within links */
+
+.logo-container {
+  background-color: #1E242A; 
+
+}
+.menu-item:hover svg {
+  fill: #B9E425; 
+}
+
+/*override sidebar*/
+
+.ps-menu-button {
+  filter: none;
+  color: inherit;
+  background-color: #b2c314;
+}
+.ps-menu-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #1E242A; /* Set background color to transparent */
+}
+
+::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #d08282;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  
+}
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #427ef7;
+}
+
+.menu-item {
+  position: relative;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-color: #c71c1c;
+  -webkit-transition: width, left, right, 300ms;
+  transition: width, left, right, 300ms;
+  width: 250px;
+  min-width: 250px;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
 }

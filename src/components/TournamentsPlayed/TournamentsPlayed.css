@@ -1,0 +1,21 @@
+
+.lime-h3 {
+  color: #B9E425;
+}
+
+.racing-results-table {
+  border-collapse: separate; 
+  border-spacing: 40px 10px;
+}
+
+.racing-results-table th,
+.racing-results-table td {
+  padding: 8px; 
+}
+
+.icon-placeholder {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgb(209, 209, 209); 
+}
