@@ -13,11 +13,10 @@ export default function HeroImage() {
             "url('https://static.vecteezy.com/system/resources/previews/029/563/443/large_2x/a-jockey-and-horse-racing-in-motion-free-photo.jpg')",
         }}
       >
+        <div className="overlay"></div> {/* Add this line for overlay */}
         <div className="mask">
-          <div className="d-flex justify-content-center align-items-center h-100">
+          <div className="hero-container">
             <div className="hero-text-container">
-              {" "}
-              {/* Update class name here */}
               <h1 className="mb-3">
                 Welcome to our Horse Racing API Dashboard!
               </h1>
