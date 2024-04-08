@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# Horse Racing App - README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Introduction
+Welcome to the Horse Racing App repository! This project aims to provide horse racing enthusiasts with a comprehensive platform for accessing horse racing data, live race updates, statistics, and much more. The app leverages an external API to fetch horse racing data and utilizes Axios for seamless data retrieval.
 
-## Available Scripts
-
-In the project directory, you can run:
+## Challenges Faced
+One of the major challenges encountered during the development of this app was the utilization of an API that had limitations on the number of requests allowed. After reaching the limit of 40 requests, the API would expire, leading to disruptions in data fetching. This limitation posed a significant hurdle and highlighted the importance of selecting reliable APIs with sufficient request limits in future projects.
 
 ### `npm start`
 
