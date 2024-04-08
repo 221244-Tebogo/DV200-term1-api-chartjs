@@ -3,7 +3,7 @@
 ### Introduction
 Welcome to the Horse Racing App repository! This project aims to provide horse racing enthusiasts with a comprehensive platform for accessing horse racing data, live race updates, statistics, and much more. The app leverages an external API to fetch horse racing data and utilizes Axios for seamless data retrieval.
 
-https://github.com/221244-Tebogo/DV200-term1-api-chartjs/blob/main/Wireframes/Landing-Page.jpg
+![Landing Page](https://raw.githubusercontent.com/221244-Tebogo/DV200-term1-api-chartjs/main/Wireframes/Landing-Page.jpg)
 
 ## Challenges Faced
 One of the major challenges encountered during the development of this app was the utilization of an API that had limitations on the number of requests allowed. After reaching the limit of 40 requests, the API would expire, leading to disruptions in data fetching. This limitation posed a significant hurdle and highlighted the importance of selecting reliable APIs with sufficient request limits in future projects.
