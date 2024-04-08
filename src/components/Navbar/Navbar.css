@@ -1,21 +1,11 @@
-/* Navbar.css */
+/* Sidebar.css */
 
-/* Remove blue color and underline effect from links */
 .nav-link a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Navbar.css */
-
- 
-
-
 /* Apply hover color */
 .nav-link a:hover {
-  color: #B9E425;
-  
-  /* Change this to your desired hover color */
+  color: #B9E425; 
 }
-
-

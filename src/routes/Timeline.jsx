@@ -1,107 +1,125 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import data from "../assets/Data";
+import { Line } from "react-chartjs-2";
+import Chart from "chart.js/auto";
+import SidebarStats from "../components/SidebarStats/SidebarStats";
+import ImageGallery from "../components/ImageGallery/ImageGallery"; // Import the ImageGallery component
 
-const Timeline = () => {
-  const [racecards, setRacecards] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+function LineChart() {
+  const [chartData, setChartData] = useState({});
 
   useEffect(() => {
-    const fetchRacecards = async () => {
-      const racecardsOptions = {
-        method: "GET",
-        url: "https://horse-racing.p.rapidapi.com/racecards",
-        params: { date: "2020-03-12" },
-        headers: {
-          "X-RapidAPI-Key":
-            "760d5078f9msh46aad0bfc90c7f3p11f496jsn4bbc447edfaf",
-          "X-RapidAPI-Host": "horse-racing.p.rapidapi.com",
-        },
-      };
-
-      try {
-        const response = await axios.request(racecardsOptions);
-        setRacecards(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching race cards data:", error);
-        setError(error);
-        setLoading(false);
-      }
-    };
-
-    fetchRacecards();
+    setTimeout(() => {
+      setChartData({
+        labels: data.map((item) => item.ngay_mua),
+        datasets: [
+          {
+            label: "Revenue",
+            data: data.map((item) => item.trigia),
+            fill: true,
+            borderColor: "rgb(255, 99, 132)",
+            backgroundColor: "rgba(255, 99, 132, 0.5)",
+          },
+        ],
+      });
+    }, 1000);
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-
   return (
-    <section className="container pt-3">
-      <div className="row">
-        <div className="col-lg-12">
-          <h1>Horse Racing Cards</h1>
-        </div>
-      </div>
-      <section
-        className="carousel slide"
-        data-bs-ride="carousel"
-        id="postsCarousel"
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <div className="row">
-              {racecards.map((race, index) => (
-                <div key={index} className="col-md-2">
-                  <div className="card h-100">
-                    <div className="card-img-top card-img-top-250">
-                      <img
-                        className="img-fluid"
-                        src={race.imageURL}
-                        alt={`Race ${index + 1}`}
-                      />
-                    </div>
-                    <div className="card-body pt-2">
-                      <h6 className="small text-wide p-b-2">Course</h6>
-                      <h2>
-                        <a href="#">{race.course}</a>
-                      </h2>
-                      <p>Distance: {race.distance}</p>
-                      <p>Title: {race.title}</p>
-                    </div>
-                  </div>
+    <div className="wrap">
+      <section className="page-content line-chart-page">
+        <main className="main" style={{ width: "1030px", display: "flex" }}>
+          <div className="main-content" style={{ flex: "1" }}>
+            <div className="main-header">
+              <div className="main-header__heading">
+                <h6>LINE CHART</h6>
+              </div>
+              <div className="main-header__updates">
+                <h2>Revenue Analysis</h2>
+              </div>
+            </div>
+            <div>
+              <br />
+              <h5>
+                <strong>Select Your Steed:</strong>
+              </h5>
+            </div>
+            <div className="main-overview">
+              <ImageGallery />
+            </div>
+            <div className="main-cards">
+              <div className="cards-container">
+                <div className="card card2">
+                  {chartData && chartData?.datasets && (
+                    <Line
+                      options={{
+                        responsive: true,
+                        plugins: {
+                          legend: {
+                            position: "top",
+                          },
+                          title: {
+                            display: true,
+                            text: "Revenue",
+                          },
+                        },
+                      }}
+                      data={chartData}
+                    />
+                  )}
                 </div>
-              ))}
+                <div className="card card3">Card3</div>
+              </div>
             </div>
           </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#postsCarousel"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#postsCarousel"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
+          <div id="sidebar-right">
+            <SidebarStats />
+          </div>
+        </main>
       </section>
-    </section>
+    </div>
   );
-};
+}
 
-export default Timeline;
+export default LineChart;
+
+// import React from "react";
+// import LineChart from "../components/Charts/LineChart";
+// import SidebarStats from "../components/SidebarStats/SidebarStats";
+
+// function Timeline() {
+//   return (
+//     <div className="wrap">
+//       <section className="page-content line-chart-page">
+//         <main className="main" style={{ width: "1030px", display: "flex" }}>
+//           <div className="main-content" style={{ flex: "1" }}>
+//             <div className="main-header">
+//               <div className="main-header__heading">
+//                 <h6>LINE CHART</h6>
+//               </div>
+//               <div className="main-header__updates">
+//                 <h2>Revenue Analysis</h2>
+//               </div>
+//             </div>
+//             <div>
+//               <br />
+//               <h5>
+//                 <strong>Select Your Steed:</strong>
+//               </h5>
+//             </div>
+//             <div className="main-overview">{/* Render other components */}</div>
+//             <div className="main-cards">
+//               <div className="cards-container">
+//                 <LineChart /> {/* Render the LineChart component */}
+//                 <div className="card card3">Card3</div>
+//               </div>
+//             </div>
+//           </div>
+//           <div id="sidebar-right">{/* Render SidebarStats */}</div>
+//         </main>
+//       </section>
+//     </div>
+//   );
+// }
+
+// export default Timeline;

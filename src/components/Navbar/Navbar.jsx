@@ -18,7 +18,7 @@ const Navbar = () => {
         <Menu className="menu">
           <MenuItem className="nav-link">
             <Link to="/">
-              <HomeRoundedIcon /> Home
+              <HomeRoundedIcon /> Dashboard
             </Link>
           </MenuItem>
           <MenuItem className="nav-link">
@@ -29,18 +29,6 @@ const Navbar = () => {
           <MenuItem className="nav-link">
             <Link to="/timeline">
               <TimelineRoundedIcon /> Timeline
-            </Link>
-          </MenuItem>
-          <MenuItem className="nav-link">
-            <Link to="/manu">
-              <TimelineRoundedIcon /> Manu
-            </Link>
-          </MenuItem>
-          <MenuItem className="nav-link">
-            <Link to="/dogs">
-              {" "}
-              {/* Update path to /dogs */}
-              <TimelineRoundedIcon /> Dogs
             </Link>
           </MenuItem>
         </Menu>

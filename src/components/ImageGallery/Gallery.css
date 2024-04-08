@@ -1,0 +1,21 @@
+/* gallery.css */
+
+.singleLineImageContainer {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+    padding: 20px;
+  }
+  
+  .image {
+    background-color: #fff;
+    margin-right: 20px; 
+    padding: 20px; 
+    border-radius: 20px; 
+    padding: 70px;
+  }
+  
+  .image:last-child {
+    margin-right: 0;
+  }
+  

@@ -6,8 +6,6 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "./routes/Dashboard";
 import Compare from "./routes/Compare";
 import Timeline from "./routes/Timeline";
-import Manu from "./routes/Manu";
-import Dogs from "./routes/Dogs";
 import Header from "./components/Header/Header";
 import MainContainer from "./components/maincontainer/MainContainer";
 import Navbar from "./components/Navbar/Navbar";
@@ -31,8 +29,6 @@ function App() {
               {/* Render Compare component inside the MainContainer */}
               <Route path="/compare" element={<Compare />} />
               <Route path="/timeline" element={<Timeline />} />
-              <Route path="/manu" element={<Manu />} />
-              <Route path="/dogs" element={<Dogs />} />{" "}
             </Routes>
           </MainContainer>
         </div>

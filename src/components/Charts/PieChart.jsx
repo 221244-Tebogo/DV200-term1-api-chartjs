@@ -1,0 +1,42 @@
+import React from "react";
+import { Pie } from "react-chartjs-2";
+import { Chart, PieController, ArcElement } from "chart.js/auto";
+
+// Register necessary Chart.js components
+Chart.register(PieController, ArcElement);
+
+const PieChart = ({ data }) => {
+  // Define chart data
+  const pieData = {
+    labels: [
+      "Football",
+      "Horse Racing",
+      "Tennis",
+      "Basketball",
+      "Cricket",
+      "Golf",
+    ],
+    datasets: [
+      {
+        label: "Total Bets",
+        data: [2500, 1800, 1200, 900, 800, 600],
+        backgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#4BC0C0",
+          "#9966FF",
+          "#FF9F40",
+        ],
+      },
+    ],
+  };
+
+  return (
+    <div className="chart-container">
+      <Pie data={pieData} /> {/* Render Pie chart */}
+    </div>
+  );
+};
+
+export default PieChart;

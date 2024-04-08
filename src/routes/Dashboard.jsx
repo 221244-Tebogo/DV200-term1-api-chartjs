@@ -1,4 +1,4 @@
-// Dashboard.jsx
+//Dashboard.jsx
 import React from "react";
 import HeroImage from "../components/HeroImage/HeroImage";
 import TournamentsPlayed from "../components/TournamentsPlayed/TournamentsPlayed";
