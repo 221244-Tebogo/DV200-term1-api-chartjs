@@ -6,65 +6,59 @@ Welcome to the Horse Racing App repository! This project aims to provide horse r
 ## Challenges Faced
 One of the major challenges encountered during the development of this app was the utilization of an API that had limitations on the number of requests allowed. After reaching the limit of 40 requests, the API would expire, leading to disruptions in data fetching. This limitation posed a significant hurdle and highlighted the importance of selecting reliable APIs with sufficient request limits in future projects.
 
-### `npm start`
+## Lessons Learned
+Throughout the development process, several valuable lessons were learned:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The importance of thoroughly researching and selecting APIs with suitable request limits to avoid disruptions in app functionality.
+The need for proactive monitoring and management of API usage to prevent exceeding request limits.
+Enhancing resilience by exploring alternative APIs or implementing caching mechanisms to mitigate the impact of API limitations.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Dependencies
+To run the app locally, you'll need the following dependencies:
+@emotion/react: ^11.11.4
+@emotion/styled: ^11.11.0
+@mui/icons-material: ^5.15.12
+@mui/material: ^5.15.12
+@mui/x-data-grid: ^6.19.6
+@nivo/bar: ^0.84.0
+@nivo/line: ^0.84.0
+@nivo/pie: ^0.84.0
+@testing-library/jest-dom: ^5.17.0
+@testing-library/react: ^13.4.0
+@testing-library/user-event: ^13.5.0
+bootstrap: ^5.2.3
+bootstrap-icons: ^1.11.3
+material-react-table: ^2.12.1
+react: ^18.2.0
+react-bootstrap: ^2.10.1
+react-chartjs-2: ^5.2.0
+react-dom: ^18.2.0
+react-pro-sidebar: ^1.1.0
+react-router-dom: ^6.22.2
+react-scripts: 5.0.1
+remixicon: ^4.2.0
+web-vitals: ^2.1.4
+yup: ^1.4.0
 
-### `npm test`
+### Dev Dependencies:
+@babel/plugin-proposal-private-property-in-object: ^7.21.11
+autoprefixer: ^10.4.17
+postcss: ^8.4.35
+tailwindcss: ^3.4.1
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Getting Started
+Clone the repository to your local machine.
+Install the necessary dependencies using npm install.
+Start the development server using npm start.
+Access the app in your browser at http://localhost:3000
 
-### `npm run build`
+## Future Enhancements
+In the future, the following enhancements could be considered:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Implementation of a more robust API with higher request limits or alternative data sources.
+Integration of caching mechanisms to reduce reliance on external APIs and improve app performance.
+Exploration of additional features such as predictive analytics, race simulations, or user forums to enhance user engagement.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Conclusion
+The Horse Racing App represents a culmination of efforts to create a comprehensive platform for horse racing enthusiasts. While facing challenges along the way, valuable lessons were learned, and opportunities for future enhancements were identified. With continued development and refinement, the app aims to provide an unparalleled experience for users passionate about horse racing.)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
