@@ -1,7 +1,7 @@
 # Horse Racing App - README
 
 ### Introduction
-Welcome to the Horse Racing App repository! This project aims to provide horse racing enthusiasts with a comprehensive platform for accessing horse racing data, live race updates, statistics, and much more. The app leverages an external API to fetch horse racing data and utilizes Axios for seamless data retrieval.
+Welcome to the Marvel App repository! This project aims to provide Marvel enthusiasts with a comprehensive platform for accessing character data, live updates, statistics, and much more. The app leverages the Marvel API to fetch character data and utilizes Axios for seamless data retrieval.
 
 ![Landing Page](https://raw.githubusercontent.com/221244-Tebogo/DV200-term1-api-chartjs/main/Wireframes/Landing-Page.jpg)
 
