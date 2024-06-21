@@ -62,7 +62,7 @@ Implementation of a more robust API with higher request limits or alternative da
 Integration of caching mechanisms to reduce reliance on external APIs and improve app performance.
 Exploration of additional features such as predictive analytics, race simulations, or user forums to enhance user engagement.
 
-![Comparison](https://raw.githubusercontent.com/221244-Tebogo/DV200-term1-api-chartjs/main/Wireframes/Comparison.jpg)
+![Comparison](https://raw.githubusercontent.com/221244-Tebogo/DV200-term1-api-chartjs/main/Mockups/mockup-2.jpg)
 
 ### Conclusion
 The Marvel App represents a culmination of efforts to create a comprehensive platform for Marvel enthusiasts. While facing challenges along the way, valuable lessons were learned, and opportunities for future enhancements were identified. With continued development and refinement, the app aims to provide an unparalleled experience for users passionate about Marvel characters.
