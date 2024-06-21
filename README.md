@@ -42,6 +42,7 @@ remixicon: ^4.2.0
 web-vitals: ^2.1.4
 yup: ^1.4.0
 
+
 ### Dev Dependencies:
 @babel/plugin-proposal-private-property-in-object: ^7.21.11
 autoprefixer: ^10.4.17
@@ -64,5 +65,5 @@ Exploration of additional features such as predictive analytics, race simulation
 ![Comparison](https://raw.githubusercontent.com/221244-Tebogo/DV200-term1-api-chartjs/main/Wireframes/Comparison.jpg)
 
 ### Conclusion
-The Horse Racing App represents a culmination of efforts to create a comprehensive platform for horse racing enthusiasts. While facing challenges along the way, valuable lessons were learned, and opportunities for future enhancements were identified. With continued development and refinement, the app aims to provide an unparalleled experience for users passionate about horse racing.)
+The Marvel App represents a culmination of efforts to create a comprehensive platform for Marvel enthusiasts. While facing challenges along the way, valuable lessons were learned, and opportunities for future enhancements were identified. With continued development and refinement, the app aims to provide an unparalleled experience for users passionate about Marvel characters.
 
