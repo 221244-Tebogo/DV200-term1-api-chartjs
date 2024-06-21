@@ -1,4 +1,4 @@
-# Horse Racing App - README
+# Marvel Hub App - README
 
 ### Introduction
 Welcome to the Marvel App repository! This project aims to provide Marvel enthusiasts with a comprehensive platform for accessing character data, live updates, statistics, and much more. The app leverages the Marvel API to fetch character data and utilizes Axios for seamless data retrieval.
