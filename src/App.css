@@ -1,9 +1,9 @@
+/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-
 }
 
 .App {
@@ -24,19 +24,16 @@ body {
   padding: 1.5rem 1rem 1rem;
   margin-right: auto;
   margin-left: auto;
-
 }
 
 .row {
-
 }
-
 
 .content {
   display: flex;
 }
 
-/*Timeline Code*/
+/* Timeline Code */
 .image-container {
   display: flex;
   flex-direction: column;
@@ -51,13 +48,119 @@ body {
   margin: 5px; /* Adjust margin as needed */
 }
 
-
-
 /* Define styles for the main container */
 .main-container {
-  margin-left: 250px; 
-  padding: 20px; 
-  height: 100%; 
+  margin-left: 250px;
+  padding: 20px;
+  height: 100%;
 }
 
-/* Add more specific styling for the header and main content if needed */
+.navbar {
+  overflow: hidden;
+  background-color: #3A4149; /* Primary color */
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #3A4149; /* Primary color */
+  color: #B9E425; /* Top/main font color */
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 2px solid #697181; /* Outline color */
+  border-radius: 17px; /* Rounded edge */
+  cursor: pointer;
+  width: 355px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #697181; /* Secondary color */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 17px; /* Rounded edge */
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black; /* Text color */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 17px; /* Rounded edge */
+}
+
+.dropdown-content a:hover {
+  background-color: #B9E425; /* Secondary hover color */
+  color: white; /* OnClick/open text color */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #B9E425; /* Secondary hover color */
+  color: white; /* OnClick/open text color */
+}
+
+/* Additional styling for cards */
+.card {
+  background-color: #fff; /* White background for cards */
+  color: #3A4149; /* Primary color for text */
+  padding: 16px;
+  margin: 16px;
+  border-radius: 17px; /* Rounded edge */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card2 {
+  margin-bottom: 20px;
+}
+
+.card3 {
+  margin-top: 20px;
+}
+
+/* LineChart Css */
+.linechart-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linechart-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line-chart-page {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Custom height for chart container */
+.chart-container {
+  height: 700px; /* Increase the height as needed */
+}
+

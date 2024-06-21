@@ -1,15 +1,139 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SidebarStats from "../components/SidebarStats/SidebarStats";
-import BarChart from "../components/Charts/BarChart"; // Import the BarChart component
-import RadarChart from "../components/Charts/RadarChart"; // Import the RadarChart component
-import DoughnutChart from "../components/Charts/DoughnutChart"; // Import the DoughnutChart component
+import axios from "axios";
+import md5 from "md5";
+import {
+  Chart as ChartJS,
+  BarElement,
+  ArcElement,
+  PointElement,
+  LineElement,
+  BarController,
+  DoughnutController,
+  PolarAreaController,
+  CategoryScale,
+  LinearScale,
+  RadialLinearScale,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar, PolarArea, Doughnut } from "react-chartjs-2";
 
-const Compare = () => {
-  const [selectedSteed, setSelectedSteed] = useState(""); // State to store the selected steed
+// Register Chart.js components
+ChartJS.register(
+  BarElement,
+  ArcElement,
+  PointElement,
+  LineElement,
+  BarController,
+  DoughnutController,
+  PolarAreaController,
+  CategoryScale,
+  LinearScale,
+  RadialLinearScale,
+  Title,
+  Tooltip,
+  Legend
+);
 
-  // Function to handle the change in the selected steed
-  const handleSteedChange = (event) => {
-    setSelectedSteed(event.target.value); // Update the selected steed state
+const ComparePage = () => {
+  const [selectedCharacter1, setSelectedCharacter1] = useState("");
+  const [selectedCharacter2, setSelectedCharacter2] = useState("");
+  const [characters, setCharacters] = useState([]);
+  const [showData1, setShowData1] = useState([]);
+  const [showData2, setShowData2] = useState([]);
+
+  const publicKey = "10c22a7e7f2700afba4320c4894b0c68";
+  const privateKey = "5061d7f027acda026ae7dd67568a0a5710b0815a";
+
+  useEffect(() => {
+    const fetchCharacters = async () => {
+      const ts = new Date().getTime();
+      const hash = md5(ts + privateKey + publicKey);
+      const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+
+      try {
+        const response = await axios.get(url);
+        setCharacters(response.data.data.results);
+      } catch (error) {
+        console.error("Error fetching characters:", error);
+      }
+    };
+
+    fetchCharacters();
+  }, []);
+
+  const handleSelectCharacter1 = (event) => {
+    const selected = characters.find(
+      (character) => character.id == event.target.getAttribute("data-value")
+    );
+    setSelectedCharacter1(event.target.getAttribute("data-value"));
+    setShowData1(selected ? [selected] : []);
+  };
+
+  const handleSelectCharacter2 = (event) => {
+    const selected = characters.find(
+      (character) => character.id == event.target.getAttribute("data-value")
+    );
+    setSelectedCharacter2(event.target.getAttribute("data-value"));
+    setShowData2(selected ? [selected] : []);
+  };
+
+  const getChartData = (data1, data2) => {
+    const colors = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"];
+    const labels = ["Comics", "Series", "Stories", "Events"];
+
+    return {
+      labels,
+      datasets: [
+        {
+          label: data1.name,
+          data: [
+            data1.comics.available,
+            data1.series.available,
+            data1.stories.available,
+            data1.events.available,
+          ],
+          backgroundColor: colors,
+          borderColor: colors.map((color) => color.replace("0.2", "1")),
+          borderWidth: 1,
+        },
+        {
+          label: data2.name,
+          data: [
+            data2.comics.available,
+            data2.series.available,
+            data2.stories.available,
+            data2.events.available,
+          ],
+          backgroundColor: colors.map((color) => color.replace("FF", "80")),
+          borderColor: colors.map((color) => color.replace("0.2", "1")),
+          borderWidth: 1,
+        },
+      ],
+    };
+  };
+
+  const getDoughnutData = (character) => {
+    const colors = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"];
+    const labels = ["Comics", "Series", "Stories", "Events"];
+
+    return {
+      labels,
+      datasets: [
+        {
+          data: [
+            character.comics.available,
+            character.series.available,
+            character.stories.available,
+            character.events.available,
+          ],
+          backgroundColor: colors,
+          hoverBackgroundColor: colors,
+        },
+      ],
+    };
   };
 
   return (
@@ -21,89 +145,166 @@ const Compare = () => {
               <h6>COMPARISON</h6>
             </div>
             <div className="main-header__updates">
-              <h2>Analyze and Contrast Horse Racing Data</h2>
+              <h2>Select Characters to Compare</h2>
             </div>
           </div>
           <div className="row">
             <div className="col">
               <h5>
-                <strong>Select Your Steed:</strong>
+                <strong>Select Your Character 1:</strong>
               </h5>
+              <div className="dropdown">
+                <button className="dropbtn">
+                  Select Your Character 1 <i className="fa fa-caret-down"></i>
+                </button>
+                <div className="dropdown-content">
+                  {characters.map((character) => (
+                    <a
+                      key={character.id}
+                      data-value={character.id}
+                      onClick={handleSelectCharacter1}
+                    >
+                      {character.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
             <div className="col">
-              {/* Dropdown menu for selecting the steed */}
-              <select
-                value={selectedSteed}
-                onChange={handleSteedChange}
-                className="dropdown-menu"
-              >
-                <option value="">Select a Steed</option>
-                <option value="Steed 1">Steed 1</option>
-                <option value="Steed 2">Steed 2</option>
-                {/* Add more options as needed */}
-              </select>
+              <h5>
+                <strong>Select Your Character 2:</strong>
+              </h5>
+              <div className="dropdown">
+                <button className="dropbtn">
+                  Select Your Character 2 <i className="fa fa-caret-down"></i>
+                </button>
+                <div className="dropdown-content">
+                  {characters.map((character) => (
+                    <a
+                      key={character.id}
+                      data-value={character.id}
+                      onClick={handleSelectCharacter2}
+                    >
+                      {character.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           <div className="main-content">
             <div className="main-overview">
-              {[...Array(2)].map((_, index) => (
-                <div key={index} className="overviewcard">
-                  {/* Image placeholder with border radius */}
-                  <img
-                    src="https://via.placeholder.com/150"
-                    alt="Placeholder"
-                    style={{ borderRadius: "20px" }}
-                  />
-                  <div className="overview-info">
-                    {/* Heading for win rate with rating stars */}
-                    <div className="row">
-                      <h7 className="col">Win rate</h7>
-                      {/* Dummy star ratings */}
-                      <div className="col stars">
-                        <span role="img" aria-label="star">
-                          ⭐
-                        </span>
-                        <span role="img" aria-label="star">
-                          ⭐
-                        </span>
-                        <span role="img" aria-label="star">
-                          ⭐
-                        </span>
-                        <span role="img" aria-label="star">
-                          ⭐
-                        </span>
-                        <span role="img" aria-label="star">
-                          ⭐
-                        </span>
+              {[selectedCharacter1, selectedCharacter2].map(
+                (characterId, index) => {
+                  const character = characters.find(
+                    (char) => char.id == characterId
+                  );
+                  return character ? (
+                    <div key={index} className="overviewcard">
+                      <img
+                        src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                        alt={character.name}
+                        style={{
+                          borderRadius: "20px",
+                          width: "150px",
+                          height: "150px",
+                        }}
+                      />
+                      <div className="overview-info">
+                        <div className="row">
+                          <h7 className="col">Name: {character.name}</h7>
+                        </div>
+                        <div className="row">
+                          <h7 className="col">
+                            Comics: {character.comics.available}
+                          </h7>
+                        </div>
+                        <div className="row">
+                          <h7 className="col">
+                            Series: {character.series.available}
+                          </h7>
+                        </div>
+                        <div className="row">
+                          <h7 className="col">
+                            Stories: {character.stories.available}
+                          </h7>
+                        </div>
+                        <div className="row">
+                          <h7 className="col">
+                            Events: {character.events.available}
+                          </h7>
+                        </div>
+                      </div>
+                      <div
+                        className="chart-container"
+                        style={{ width: "150px", height: "150px" }}
+                      >
+                        <Doughnut
+                          data={getDoughnutData(character)}
+                          options={{ responsive: true }}
+                        />
                       </div>
                     </div>
-                    {/* Heading for jockey performance */}
-                    <div className="row">
-                      <h7 className="col">Jockey performance</h7>
-                      {/* Add DoughnutChart */}
-                      <div className="col">
-                        <DoughnutChart />
+                  ) : null;
+                }
+              )}
+            </div>
+            {showData1.length > 0 && showData2.length > 0 && (
+              <>
+                <div className="compare-main-cards">
+                  <div className="compare-card-wrapper">
+                    <h6>Character Comparison:</h6>
+                    <div className="compare-card">
+                      <div
+                        className="chart-container"
+                        style={{ height: "700px" }} // Updated height
+                      >
+                        <Bar
+                          data={getChartData(showData1[0], showData2[0])}
+                          options={{ responsive: true }}
+                        />
+                      </div>
+                    </div>
+                    <div className="compare-card">
+                      <div
+                        className="chart-container"
+                        style={{ height: "700px" }} // Updated height
+                      >
+                        <Bar
+                          data={getChartData(showData2[0], showData1[0])}
+                          options={{ responsive: true }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="compare-card-wrapper">
+                    <h6>Character Comparison:</h6>
+                    <div className="compare-card">
+                      <div
+                        className="chart-container"
+                        style={{ height: "700px" }} // Updated height
+                      >
+                        <PolarArea
+                          data={getChartData(showData1[0], showData2[0])}
+                          options={{ responsive: true }}
+                        />
+                      </div>
+                    </div>
+                    <div className="compare-card">
+                      <div
+                        className="chart-container"
+                        style={{ height: "700px" }} // Updated height
+                      >
+                        <PolarArea
+                          data={getChartData(showData2[0], showData1[0])}
+                          options={{ responsive: true }}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-            <div className="compare-main-cards">
-              <div className="compare-card-wrapper">
-                <h6>Horse Races:</h6>
-                <div className="compare-card">
-                  <BarChart /> {/* Integration of BarChart component */}
-                </div>
-              </div>
-              <div className="compare-card-wrapper">
-                <h6>Jockey Performance:</h6>
-                <div className="compare-card">
-                  <RadarChart /> {/* Integration of RadarChart component */}
-                </div>
-              </div>
-            </div>{" "}
-            {/* Close .compare-main-cards here */}
+              </>
+            )}
           </div>
         </main>
       </section>
@@ -114,98 +315,4 @@ const Compare = () => {
   );
 };
 
-export default Compare;
-
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import SidebarStats from "../components/SidebarStats/SidebarStats";
-// import BarChart from "../components/Charts/BarChart";
-// import RadarChart from "../components/Charts/RadarChart";
-// import DoughnutChart from "../components/Charts/DoughnutChart";
-
-// const Compare = () => {
-//   const [racecards, setRacecards] = useState([]);
-
-//   useEffect(() => {
-//     const fetchRacecards = async () => {
-//       const options = {
-//         method: "GET",
-//         url: "https://horse-racing.p.rapidapi.com/horse-stats/230380",
-//         headers: {
-//           "X-RapidAPI-Key":
-//             "760d5078f9msh46aad0bfc90c7f3p11f496jsn4bbc447edfaf",
-//           "X-RapidAPI-Host": "horse-racing.p.rapidapi.com",
-//         },
-//       };
-
-//       try {
-//         const response = await axios.request(options);
-//         console.log("Racecards data:", response.data); // Log the response data
-//         setRacecards(response.data);
-//       } catch (error) {
-//         console.error("Error fetching race cards data:", error);
-//       }
-//     };
-
-//     fetchRacecards();
-//   }, []);
-
-//   return (
-//     <div className="wrap">
-//       <section className="page-content">
-//         <main className="main" style={{ width: "1030px" }}>
-//           <div className="main-header">
-//             <div className="main-header__heading">
-//               <h6>COMPARISON</h6>
-//             </div>
-//             <div className="main-header__updates">
-//               <h2>Analyze and Contrast Horse Racing Data</h2>
-//             </div>
-//           </div>
-//           <div>
-//             <br />
-//             <h5>
-//               <strong>Select Your Steed:</strong>
-//             </h5>
-//           </div>
-//           <div className="main-content">
-//             <div className="main-overview">
-//               {/* Remove Dog image */}
-//               <div className="overview-info">
-//                 <div className="row">
-//                   <h7 className="col">Win rate</h7>
-//                   <div className="col stars">⭐⭐⭐⭐⭐</div>
-//                 </div>
-//                 <div className="row">
-//                   <h7 className="col">Jockey performance</h7>
-//                   <div className="col">
-//                     <DoughnutChart />
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//             <div className="compare-main-cards">
-//               <div className="compare-card-wrapper">
-//                 <h6>Horse Races:</h6>
-//                 <div className="compare-card">
-//                   <BarChart racecards={racecards} />
-//                 </div>
-//               </div>
-//               <div className="compare-card-wrapper">
-//                 <h6>Jockey Performance:</h6>
-//                 <div className="compare-card">
-//                   <RadarChart racecards={racecards} />
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </main>
-//       </section>
-//       <div id="sidebar-right">
-//         <SidebarStats />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Compare;
+export default ComparePage;

@@ -1,6 +1,6 @@
 /* index.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* Use @tailwind base instead of @layer base */
 @tailwind base;
@@ -11,7 +11,7 @@ body,
 #root {
   height: 100%;
   width: 100%;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white; 
   background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(26,29,33,1) 100%);
 
@@ -26,16 +26,8 @@ body,
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 1px;
   
-}
-
-::-webkit-scrollbar-thumb {
-  background: #b2c314;
-}
-
-::-webkit-scrollbar-track:hover {
-  background: #e51515;
 }
 
 
@@ -70,6 +62,8 @@ a:hover {
     width: 250px;
     z-index: 100;
     background-color: #1E242A;
+    border-color: #f61c1c;
+
   
 }
 
@@ -181,29 +175,8 @@ a:hover {
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Use @tailwind base instead of @layer base */
-@tailwind base;
 
-/* Global styles for HTML, body, and root */
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
-  font-family: 'Raleway', sans-serif;
-  color: white; 
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(26,29,33,1) 100%);
-
-}
-
-/* App styles */
-.app {
-  display: flex;
-  position: relative;
-  
-}
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
@@ -212,11 +185,13 @@ body,
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b2c314;
+  background-color: rgba(0, 0, 0, 0.1); 
+  border-radius: 10px; 
+  border: none; 
 }
 
 ::-webkit-scrollbar-track:hover {
-  background: #e51515;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /* Button styles */

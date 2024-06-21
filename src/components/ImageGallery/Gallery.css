@@ -1,21 +1,43 @@
-/* gallery.css */
-
 .singleLineImageContainer {
-    display: flex;
-    width: 100%;
-    overflow: auto;
-    padding: 20px;
-  }
-  
-  .image {
-    background-color: #fff;
-    margin-right: 20px; 
-    padding: 20px; 
-    border-radius: 20px; 
-    padding: 70px;
-  }
-  
-  .image:last-child {
-    margin-right: 0;
-  }
-  
+  display: flex;
+  width: 100%;
+  overflow: auto;
+  padding: 20px;
+}
+
+.image {
+  background-color: #fff;
+  margin-right: 50px;
+  padding: 10px;
+  border-radius: 50%; /* Makes the container circular */
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
+  width: 220px; /* Set the size as needed to fit the image size plus padding */
+  height: 220px; /* Set the size as needed to fit the image size plus padding */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image:last-child {
+  margin-right: 0;
+}
+
+.image img {
+  width: 100%; /* Ensures the image fills the container */
+  height: 100%; /* Ensures the image fills the container */
+  object-fit: cover; /* Ensures the image covers the entire circle */
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px; /* Reduced font size */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

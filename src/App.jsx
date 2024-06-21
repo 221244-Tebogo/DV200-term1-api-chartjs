@@ -15,18 +15,12 @@ function App() {
     <div className="app">
       <Navbar />
       <div className="content">
-        <div className="sidebar">
-          {/* Sidebar content goes here */}
-          {/* You can add navigation links or any other sidebar content */}
-        </div>
+        <div className="sidebar"></div>
         <div className="main-container">
           <Header />
-          {/* Render the content inside the MainContainer */}
           <MainContainer>
             <Routes>
-              {/* Render Dashboard component inside the MainContainer */}
               <Route path="/" element={<Dashboard />} />
-              {/* Render Compare component inside the MainContainer */}
               <Route path="/compare" element={<Compare />} />
               <Route path="/timeline" element={<Timeline />} />
             </Routes>
