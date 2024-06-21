@@ -67,3 +67,6 @@ Exploration of additional features such as predictive analytics, race simulation
 ### Conclusion
 The Marvel App represents a culmination of efforts to create a comprehensive platform for Marvel enthusiasts. While facing challenges along the way, valuable lessons were learned, and opportunities for future enhancements were identified. With continued development and refinement, the app aims to provide an unparalleled experience for users passionate about Marvel characters.
 
+![Comparison](https://raw.githubusercontent.com/221244-Tebogo/DV200-term1-api-chartjs/main/Mockups/mockup-3.jpg)
+
+
