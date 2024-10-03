@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< HEAD
 import "./Gallery.css"; // Ensure this CSS file is correctly imported
+=======
+import "./Gallery.css";
+>>>>>>> ea5d899a4 (Your commit message)
 
 const ImageGallery = ({ comics }) => {
   return (
