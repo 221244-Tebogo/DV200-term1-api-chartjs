@@ -1,4 +1,3 @@
-/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,7 +32,6 @@ body {
   display: flex;
 }
 
-/* Timeline Code */
 .image-container {
   display: flex;
   flex-direction: column;
@@ -44,11 +42,10 @@ body {
 }
 
 .row img {
-  width: 20%; /* Adjust the width as needed */
-  margin: 5px; /* Adjust margin as needed */
+  width: 20%; 
+  margin: 5px;
 }
 
-/* Define styles for the main container */
 .main-container {
   margin-left: 250px;
   padding: 20px;
@@ -57,7 +54,7 @@ body {
 
 .navbar {
   overflow: hidden;
-  background-color: #3A4149; /* Primary color */
+  background-color: #3A4149;
 }
 
 .navbar a {
@@ -75,12 +72,12 @@ body {
 }
 
 .dropbtn {
-  background-color: #3A4149; /* Primary color */
-  color: #B9E425; /* Top/main font color */
+  background-color: #3A4149;
+  color: #B9E425; 
   padding: 14px 16px;
   font-size: 16px;
-  border: 2px solid #697181; /* Outline color */
-  border-radius: 17px; /* Rounded edge */
+  border: 2px solid #697181;
+  border-radius: 17px;
   cursor: pointer;
   width: 355px;
 }
@@ -88,24 +85,24 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #697181; /* Secondary color */
+  background-color: #697181;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 17px; /* Rounded edge */
+  border-radius: 17px;
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: black; /* Text color */
+  color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  border-radius: 17px; /* Rounded edge */
+  border-radius: 17px;
 }
 
 .dropdown-content a:hover {
-  background-color: #B9E425; /* Secondary hover color */
-  color: white; /* OnClick/open text color */
+  background-color: #B9E425;
+  color: white;
 }
 
 .dropdown:hover .dropdown-content {
@@ -113,17 +110,16 @@ body {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #B9E425; /* Secondary hover color */
-  color: white; /* OnClick/open text color */
+  background-color: #B9E425;
+  color: white;
 }
 
-/* Additional styling for cards */
 .card {
-  background-color: #fff; /* White background for cards */
-  color: #3A4149; /* Primary color for text */
+  background-color: #fff;
+  color: #3A4149;
   padding: 16px;
   margin: 16px;
-  border-radius: 17px; /* Rounded edge */
+  border-radius: 17px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -141,7 +137,6 @@ body {
   margin-top: 20px;
 }
 
-/* LineChart Css */
 .linechart-wrap {
   display: flex;
   flex-direction: column;
@@ -159,8 +154,7 @@ body {
   flex-direction: row;
 }
 
-/* Custom height for chart container */
 .chart-container {
-  height: 700px; /* Increase the height as needed */
+  height: 700px;
 }
 
