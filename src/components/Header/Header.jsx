@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 //rfce to start a page
 
+=======
+>>>>>>> ea5d899a4 (Your commit message)
 import React from "react";
 import { Box, IconButton, useTheme } from "@mui/material";
 
@@ -11,6 +14,7 @@ function Header() {
 }
 
 export default Header;
+<<<<<<< HEAD
 
 // import React from "react";
 // import { Box, IconButton, useTheme } from "@mui/material";
@@ -52,3 +56,5 @@ export default Header;
 // }
 
 // export default Header;
+=======
+>>>>>>> ea5d899a4 (Your commit message)
