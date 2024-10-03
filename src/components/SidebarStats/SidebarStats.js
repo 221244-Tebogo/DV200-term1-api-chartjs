@@ -17,7 +17,10 @@ const SidebarStats = () => {
 
       try {
         const response = await axios.get(url);
+<<<<<<< HEAD
         console.log("Marvel API response:", response.data);
+=======
+>>>>>>> ea5d899a4 (Your commit message)
         setCharacters(response.data.data.results);
       } catch (error) {
         console.error("Error fetching characters:", error);
@@ -29,9 +32,12 @@ const SidebarStats = () => {
 
   return (
     <div className="sidebar" style={{ width: "85%" }}>
+<<<<<<< HEAD
       {" "}
       {/* Adjust width of the sidebar */}
       {/* User profile section */}
+=======
+>>>>>>> ea5d899a4 (Your commit message)
       <div className="user-profile">
         <a className="nav-link" href="#/admin/user">
           <img
@@ -42,9 +48,13 @@ const SidebarStats = () => {
           <p>John Doe</p>
         </a>
       </div>
+<<<<<<< HEAD
       {/* Divider line */}
       <hr className="divider" />
       {/* Marvel Characters section */}
+=======
+      <hr className="divider" />
+>>>>>>> ea5d899a4 (Your commit message)
       <h3 className="lime-h3">Marvel Characters</h3>
       <table className="racing-results-table">
         <tbody>
@@ -72,6 +82,7 @@ const SidebarStats = () => {
 };
 
 export default SidebarStats;
+<<<<<<< HEAD
 
 // import React from "react";
 // import "./SidebarStats.css"; // Import CSS file for styling
@@ -146,3 +157,5 @@ export default SidebarStats;
 // };
 
 // export default SidebarStats;
+=======
+>>>>>>> ea5d899a4 (Your commit message)

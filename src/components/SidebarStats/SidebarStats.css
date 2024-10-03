@@ -1,21 +1,36 @@
+<<<<<<< HEAD
 /* SidebarStats.css */
 /* SidebarStats.css */
+=======
+>>>>>>> ea5d899a4 (Your commit message)
 
 .user-profile {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   margin-bottom: 20px; /* Adjust as needed */
+=======
+  margin-bottom: 20px; 
+>>>>>>> ea5d899a4 (Your commit message)
 }
 
 .user-profile a {
   display: flex;
   align-items: center;
   text-decoration: none;
+<<<<<<< HEAD
   color: #ffffff; /* Text color for user profile */
 }
 
 .user-profile a:hover {
   color: #b9e425; /* Hover color for user profile */
+=======
+  color: #ffffff; 
+}
+
+.user-profile a:hover {
+  color: #b9e425; 
+>>>>>>> ea5d899a4 (Your commit message)
 }
 
 .user-image {
@@ -39,7 +54,10 @@
   border-radius: 10px;
 }
 
+<<<<<<< HEAD
 /* Add any additional styles as needed */
+=======
+>>>>>>> ea5d899a4 (Your commit message)
 .sidebar-stats {
   color: #b9e425; 
 }
