@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // Navbar.jsx
+=======
+>>>>>>> ea5d899a4 (Your commit message)
 import React from "react";
 import { Link } from "react-router-dom";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
