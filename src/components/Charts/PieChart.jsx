@@ -2,11 +2,9 @@ import React from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart, PieController, ArcElement } from "chart.js/auto";
 
-// Register necessary Chart.js components
 Chart.register(PieController, ArcElement);
 
 const PieChart = ({ data }) => {
-  // Define chart data
   const pieData = {
     labels: [
       "Football",
@@ -34,7 +32,7 @@ const PieChart = ({ data }) => {
 
   return (
     <div className="chart-container">
-      <Pie data={pieData} /> {/* Render Pie chart */}
+      <Pie data={pieData} />
     </div>
   );
 };
