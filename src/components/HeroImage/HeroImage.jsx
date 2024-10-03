@@ -11,7 +11,11 @@ export default function HeroImage() {
             "url('https://cdn.pixabay.com/photo/2022/10/29/08/12/superhero-7554694_1280.jpg')",
         }}
       >
+<<<<<<< HEAD
         <div className="overlay"></div> {/* overlay */}
+=======
+        <div className="overlay"></div>
+>>>>>>> ea5d899a4 (Your commit message)
         <div className="mask">
           <div className="hero-container">
             <div className="hero-text-container">
