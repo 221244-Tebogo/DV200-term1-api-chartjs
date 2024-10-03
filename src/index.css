@@ -1,11 +1,8 @@
-/* index.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* Use @tailwind base instead of @layer base */
 @tailwind base;
 
-/* Global styles for HTML, body, and root */
+
 html,
 body,
 #root {
@@ -17,14 +14,12 @@ body,
 
 }
 
-/* App styles */
 .app {
   display: flex;
   position: relative;
   
 }
 
-/* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 1px;
   
@@ -43,7 +38,6 @@ h5 {
   background-color: #ff1e83;
 }
 
-/* Link styles */
 a {
   text-decoration: none;
   color: rgb(228, 86, 86);
@@ -53,12 +47,11 @@ a:hover {
   color: #1a6dc5;
 }
 
-/* Navbar styles */
 .navbar-container {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh; /* Use 100vh to fill the entire viewport height */
+    height: 100vh;
     width: 250px;
     z-index: 100;
     background-color: #1E242A;
@@ -67,9 +60,8 @@ a:hover {
   
 }
 
-/* Apply hover color to ps-menu-button */
 .ps-menu-button:hover {
-  background-color: #b9e425; /* Change the background color on hover */
+  background-color: #b9e425;
 }
 
 .ps-sidebar-container {
@@ -79,7 +71,6 @@ a:hover {
   width: 100%;
 }
 
-/* Icon styles within links */
 .logo-container {
   background-color: #1E242A; 
 
@@ -88,7 +79,6 @@ a:hover {
   fill: #25cee4; 
 }
 
-/*override sidebar*/
 .ps-menu-button {
   display: -webkit-box;
   display: -webkit-flex;
@@ -107,7 +97,7 @@ a:hover {
   filter: none;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #1E242A;  /* Set background color to transparent */
+  background-color: #1E242A;
 }
 
 ::before, ::after {
@@ -162,23 +152,16 @@ a:hover {
   box-sizing: border-box;
 }
 
-/* Add styles for the SidebarStats component */
 .sidebar-stats {
   position: fixed;
   top: 0;
   right: 0;
-  width: 250px; /* Adjust width as needed */
+  width: 250px;
   height: 100vh;
-  background-color: #1E242A; /* Example background color */
+  background-color: #1E242A;
   z-index: 100;
-  /* Add other styles as needed */
 }
 
-
-
-
-
-/* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 10px;
   
@@ -194,7 +177,6 @@ a:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* Button styles */
 button {
   color: rgb(220, 216, 20);
   background-color: #b9e425;
@@ -209,7 +191,6 @@ button {
   background-color: #ff1e83;
 }
 
-/* Link styles */
 a {
   text-decoration: none;
   color: rgb(228, 86, 86);
@@ -219,21 +200,19 @@ a:hover {
   color: #1a6dc5;
 }
 
-/* Navbar styles */
 .navbar-container {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh; /* Use 100vh to fill the entire viewport height */
+    height: 100vh;
     width: 250px;
     z-index: 100;
     background-color: #1E242A;
   
 }
 
-/* Apply hover color to ps-menu-button */
 .ps-menu-button:hover {
-  background-color: #b9e425; /* Change the background color on hover */
+  background-color: #b9e425;
 }
 
 .ps-sidebar-root-container-test-id {
@@ -241,7 +220,6 @@ a:hover {
   background-color: #1e242a1a;
 }
 
-/* Icon styles within links */
 .logo-container {
   background-color: #1E242A; 
 
@@ -250,7 +228,6 @@ a:hover {
   fill: #25cee4; 
 }
 
-/*override sidebar*/
 .ps-menu-button {
   display: -webkit-box;
   display: -webkit-flex;
@@ -269,7 +246,7 @@ a:hover {
   filter: none;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #1E242A;  /* Set background color to transparent */
+  background-color: #1E242A; 
 }
 
 ::before, ::after {
@@ -324,7 +301,6 @@ a:hover {
   box-sizing: border-box;
 }
 
-/* Add styles for the SidebarStats component */
 .sidebar-stats {
   position: fixed;
   top: 0;
@@ -335,7 +311,6 @@ a:hover {
   z-index: 100;
 }
 
-/*Grid Container*/
 .wrap {
   width: 100%;
   margin: 0 auto;
@@ -348,19 +323,15 @@ a:hover {
   width: 200px;
 }
 
-/*#sidebar-left {
-  background-color: #e3e9ee;
-}*/
 
-/* SideBar Right With Live Stats */
 #sidebar-right {
   background-color: #1E242A;
-  width: 250px; /* Adjust width */
-  position: fixed; /* Add fixed position */
-  top: 0; /* Align with the top */
-  right: 0; /* Align with the right */
-  height: 100vh; /* Occupy full viewport height */
-  z-index: 100; /* Ensure it's above other elements */
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 100;
   padding: 0 20px;
 }
 
@@ -374,7 +345,7 @@ a:hover {
   }
 
   #sidebar-right {
-    width: 20%; /* Updated width */
+    width: 20%;
   }
 }
 
@@ -392,24 +363,22 @@ a:hover {
   }
 }
 
-/*Main Container*/
 .main {
   grid-area: main;
   height: 100%;
   width: 100%;
 }
 
-/*Spacing Between Top Cards*/
 .main-overview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
   grid-auto-rows: 180px;
   grid-gap: 20px;
   margin: 20px;
-  height: 50%; /* Set the height to distribute evenly */
+  height: 50%;
 
 }
-/*Top Small Cards*/
+
 .overviewcard {
   display: flex;
   align-items: center;
@@ -418,12 +387,10 @@ a:hover {
   border-width: 1px; 
   border-color: #697181; 
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.035); /* Morph background effect */
-  backdrop-filter: blur(10px); /* Glass effect */
+  background-color: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(10px);
 }
 
-
-/*Spacing between Cards*/
 .main-cards {
   column-count: 1;
   column-gap: 20px;
@@ -442,7 +409,6 @@ a:hover {
   box-sizing: border-box;
 }
 
-/* Force varying heights to simulate dynamic content */
 .card:first-child {
   height: 485px;
 }
@@ -455,9 +421,7 @@ a:hover {
   height: 265px;
 }
 
-/* Non-mobile styles, 750px breakpoint */
 @media only screen and (min-width: 46.875em) {
-  /* Show the sidenav */
   .grid-container {
     grid-template-columns: 240px 1fr;
     grid-template-areas:
@@ -478,38 +442,33 @@ a:hover {
   }
 }
 
-/* Medium screens breakpoint (1050px) */
 @media only screen and (min-width: 65.625em) {
-  /* Break out main cards into two columns */
   .main-cards {
     column-count: 2;
   }
 }
 
-/*Timeline Card*/
 .card {
-  padding: 20px; /* Adjust padding as needed */
+  padding: 20px;
   margin-bottom: 20px;
 }
 
-/* Scope styles to card2 and card3 */
 .card.card2,
 .card.card3 {
   height: 350px;
 }
 
 .line-chart-page .main-overview {
-  margin-bottom: 20px; /* Adjust margin as needed */
+  margin-bottom: 20px;
 }
 
 .line-chart-page .main-cards {
-  margin-top: 20px; /* Adjust margin as needed */
+  margin-top: 20px;
 }
 
-/*Comparism Blocks*/
 .compare-main-cards {
-  display: flex; /* Use flexbox to display cards in the same row */
-  flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+  display: flex; 
+  flex-wrap: wrap;
 }
 
 .compare-card {
@@ -519,18 +478,18 @@ a:hover {
   border-width: 1px; 
   border-color: #697181; 
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.749); /* Morph background effect */
-  backdrop-filter: blur(10px); /* Glass effect */
+  background-color: rgba(255, 255, 255, 0.749);
+  backdrop-filter: blur(10px);
 }
 
 
 .compare-card-wrapper {
   display: inline-block;
-  margin-right: 20px; /* Adjust margin as needed */
-  width: calc(50% - 20px); /* Adjust the width of each card to take up half of the available space, minus margins */
+  margin-right: 20px;
+  width: calc(50% - 20px);
 
 }
-/* Compare.css */
+
 .row {
   display: flex;
   align-items: center;
@@ -540,26 +499,21 @@ a:hover {
   margin-left: 10px;
 }
 
-/*Charts css*/
-/* Adjust according to your specific chart styles */
 .chart-container {
-  /* Example: Set border color for all charts */
   border-color: #FFFFFF;
 }
 
-/* Apply white color to all text elements inside charts */
 .chart-container * {
   color: #FFFFFF;
 }
 
-/*drop down menu*/
 .dropdown-menu {
   height: 30px;
   margin: 10px;
   padding: 10px;
   border: 1px solid #697181;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.06); /* Morph background effect */
-  backdrop-filter: blur(10px); /* Glass effect */
-  color: #B9E425; /* Font color */
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  color: #B9E425;
 }
