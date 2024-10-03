@@ -20,7 +20,6 @@ import {
 } from "chart.js";
 import { Bar, PolarArea, Doughnut } from "react-chartjs-2";
 
-// Register Chart.js components
 ChartJS.register(
   BarElement,
   ArcElement,
@@ -257,7 +256,7 @@ const ComparePage = () => {
                     <div className="compare-card">
                       <div
                         className="chart-container"
-                        style={{ height: "700px" }} // Updated height
+                        style={{ height: "700px" }}
                       >
                         <Bar
                           data={getChartData(showData1[0], showData2[0])}
@@ -268,7 +267,7 @@ const ComparePage = () => {
                     <div className="compare-card">
                       <div
                         className="chart-container"
-                        style={{ height: "700px" }} // Updated height
+                        style={{ height: "700px" }}
                       >
                         <Bar
                           data={getChartData(showData2[0], showData1[0])}
@@ -282,7 +281,7 @@ const ComparePage = () => {
                     <div className="compare-card">
                       <div
                         className="chart-container"
-                        style={{ height: "700px" }} // Updated height
+                        style={{ height: "700px" }}
                       >
                         <PolarArea
                           data={getChartData(showData1[0], showData2[0])}
@@ -293,7 +292,7 @@ const ComparePage = () => {
                     <div className="compare-card">
                       <div
                         className="chart-container"
-                        style={{ height: "700px" }} // Updated height
+                        style={{ height: "700px" }}
                       >
                         <PolarArea
                           data={getChartData(showData2[0], showData1[0])}

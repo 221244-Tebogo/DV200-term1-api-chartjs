@@ -16,7 +16,6 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
-// Register Chart.js components
 ChartJS.register(
   TimeScale,
   LinearScale,
@@ -254,8 +253,8 @@ const LineChart = () => {
                               },
                             },
                           }}
-                          height={700} // Updated height for canvas
-                          width={1000} // Updated width for canvas
+                          height={700}
+                          width={1000}
                         />
                       </div>
                     </div>
